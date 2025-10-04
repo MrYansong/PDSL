@@ -112,7 +112,7 @@ def train(args, train_set, model):
         if (recall_all / sample_number) > 0.8: #early stopping
             break
 
-    eval_vae_model = model.vae_model
+    eval_vae_model = model.cvae_model
     eval_forward_model = InferenceModel(model.mlp_model, model.propagate).to(device)
 
     return eval_vae_model, eval_forward_model

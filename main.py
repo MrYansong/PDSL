@@ -24,7 +24,7 @@ parser = argparse.ArgumentParser(description="PDSL")
 datasets = ['jazz_SI', 'jazz_GLT', 'jazz_SIR', 'netscience_SI', 'netscience_GLT', 'netscience_SIR',
             'CollegeMsg_SI', 'CollegeMsg_GLT', 'CollegeMsg_SIR', 'cora_SI', 'cora_GLT', 'cora_SIR',
             'BA_SI', 'BA_GLT', 'BA_SIR']
-parser.add_argument("--dataset", default='cora_unDi_SIR_top1k_240seeds_5snaps_infected_nodes', type=str,
+parser.add_argument("--dataset", default='jazz_SI', type=str,
                     help="one of: {}".format(", ".join(sorted(datasets))))
 parser.add_argument( "--train_ratio", default=0.9, type=float, help="The ratio of train sets")
 parser.add_argument( "--encoder_hidden", default=512, type=int, help="")
@@ -40,8 +40,7 @@ parser.add_argument( "--inference_learning_rate", default=5e-2, type=float)
 
 args = parser.parse_args(args=[])
 scores = []
-# sys.stdout = Logger('macro-' + dataset.split('/')[1] + '.txt')
-sys.stdout = Logger('macro-' + args.dataset + '_GCN_2t_size.txt')
+sys.stdout = Logger(args.dataset + '.txt')
 for i in range(5):
     start = time.time()
     precision, recall, f1, acc, auc_float, auc_binary = run(args)
