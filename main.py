@@ -41,7 +41,7 @@ parser.add_argument( "--inference_learning_rate", default=5e-2, type=float)
 args = parser.parse_args(args=[])
 scores = []
 sys.stdout = Logger(args.dataset + '.txt')
-for i in range(5):
+for i in range(10):
     start = time.time()
     precision, recall, f1, acc, auc_float, auc_binary = run(args)
     scores.append([precision, recall, f1, acc, auc_float, auc_binary])
