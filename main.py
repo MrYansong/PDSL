@@ -4,7 +4,6 @@ import time
 import os, sys
 import argparse
 os.chdir(sys.path[0])
-# pre_all, recall_all, f1_all, acc_all, auc_float_all, auc_binary_all
 
 class Logger(object):
     def __init__ (self, fileN="Default.log"):
