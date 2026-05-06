@@ -1,5 +1,4 @@
-# PDSL
-PDSL: Propagation Dynamics Aware Framework for Source Localization
+# PDSL: Propagation Dynamics Aware Framework for Source Localization
 This repository contains the official implementation of PDSL, a novel framework designed to identify the source nodes of information propagation within complex networks. Unlike traditional methods that rely on static mappings, PDSL integrates propagation dynamics and continuous-time modeling to explicitly address the uncertainty caused by the stochastic nature of diffusion.
 
 ## 🚀 Overview
